@@ -1,1 +1,9 @@
-Consumption Behavior Definition: projection, strict (2), define behavior for ZC_TRAVEL_XXX alias Travel with use create, use update, use delete operations.
+projection;
+strict ( 2 );
+
+define behavior for ZC_TRAVEL_XXX alias Travel
+{
+  use create;
+  use update;
+  use delete;
+}
