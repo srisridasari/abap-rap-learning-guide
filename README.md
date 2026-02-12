@@ -14,7 +14,7 @@
 11. [Call to Action](#call-to-action)
 
 ## What is RAP?
-RAP, or the SAP RAP (Rapid Application Programming) model, is a paradigm that accelerates application development... [Include analogy here]
+RAP, or the SAP RAP (Restful Application Programming) model, is a paradigm that accelerates application development... [Include analogy here]
 
 ## Part 1: Understanding the Foundation
 In this section, we will dive into the basics of database tables and Core Data Services (CDS) used within SAP.
