@@ -1,0 +1,2 @@
+@EndUserText.label 'Travel Service Definition'
+define service Z_TRAVEL_XXX with expose ZC_TRAVEL_XXX as Travel.
