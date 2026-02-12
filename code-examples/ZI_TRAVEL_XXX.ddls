@@ -1,19 +1,18 @@
-@AbapCatalog.sqlViewName: 'ZIF_CDS_VIEW_TRAVEL_XXX'
-@AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
-@AbapBehavior.define: {'UserTracking'}
-@EndUserText.label: 'CDS View for ZTravel_XXX'
-define view ZI_TRAVEL_XXX as select from ztravel_xxx
-  {
-    key field1,
-    key field2,
-    field3,
-    field4,
-    @Semantic.amount: true
-    field_amount,
-    @Semantic.user: true
-    field_user,
-    @Semantic.dateTime: true
-    field_created_on,
-    field_updated_on
-  }
+@AccessControl.authorizationCheck #NOT_REQUIRED
+@EndUserText.label: 'Travel Interface View'
+define root view entity ZI_TRAVEL_XXX as select from ztravel_xxx
+with key travel_id,
+fields agency_id,
+customer_id,
+begin_date,
+end_date,
+booking_fee with @Semantics.amount.currencyCode 'currency_code' annotation,
+total_price with same annotation,
+currency_code,
+description,
+overall_status,
+created_by with @Semantics.user.createdBy true,
+created_at with @Semantics.systemDateTime.createdAt true,
+last_changed_by with @Semantics.user.lastChangedBy true,
+last_changed_at with @Semantics.systemDateTime.lastChangedAt true,
+and local_last_changed_at with @Semantics.systemDateTime.localInstanceLastChangedAt true.
